@@ -1,0 +1,200 @@
+.container {
+    width: 85%;
+
+    background-color: aqua;
+
+    border: 2px inset #000;
+    padding: 30px;
+    /* 裡面物質與母物件的距離 */
+    padding-top: 30px;
+    margin: 10px;
+    /* 跟別人之間的距離 */
+    /* top bottom left right */
+    margin: 0 auto;
+    /* auto 自己計算空間  */
+    box-sizing: border-box;
+
+}
+.photo{
+    text-align: center;
+    /* photo區塊之圖片會居中 */
+}
+
+.myphoto {
+    width: 66%;
+    border-radius: 20px;
+    
+}
+
+h1 {
+    font-size: 20px;
+    color: yellow;
+    font-family: sans-serif;
+    text-shadow: 0 0 2px #000;
+
+}
+
+.info {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+.button-group
+{
+    text-align: center;
+    
+}
+.button{
+    position: relative;
+    /* 設定為母物件 */
+    display: block;
+    /* 設定為block屬性 */
+    width: 90%;
+    border: 1px solid #000;
+    padding: 12px;
+    margin-top: 25px;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+
+.icon{
+    position: absolute;
+    /* absolute 相對母元件的位置 */
+    top: 9px;
+    left: 30px;
+
+}
+
+.box{
+    /* pointer-events: none; 滑鼠游標碰不到他 */
+    position: sticky;
+    /* 躍過後 卡在畫面位置 */
+    top: 33%;
+
+}
+.box2{
+    position: fixed;
+    inset: 1% 3% 10% 25%;
+    background-color: rgba(177, 120, 231, 0.5);
+    pointer-events: none;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right:50%;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+
+}
+
+.photogroup{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 30px 0;
+}
+.photo-item img{
+    max-width: 100%;
+    height: auto;
+    /* 以下設定自動裁取大小 */
+    object-fit: cover;
+    /* 物件符合 覆蓋 */
+    aspect-ratio: 1;
+    /* 寬跟高的比例 */
+    transition-duration: 700ms;
+    
+}
+.photo-item{
+    line-height: 0;
+}
+
+.photo-item img:hover{
+    transform: scale(2);
+    border: 1px solid #000 ;
+    
+
+}
+
+.t-lineth{
+    text-decoration-line: line-through;
+}
+
+.top div{
+    width: 16px;
+    height: 16px;
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
+    transform:rotate(-45deg);
+}
+
+.wh-earth{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: cyan;
+}
+
+/* body{
+height: 3000px;
+} */
+
+
+@media print{
+    .photo{
+        display: none;
+    }
+}
+/* 列印的時候 隱藏圖片 */
+
+/* 政府機關標案通常會友善列印、文字大小變更之要求 */
+
+/* @media screen and (max-width:1000px) {
+    可改成@media (max-width:1000px)
+    .photo{
+        display: none;
+    }
+}
+
+@media screen and (min-width:700px) {
+    h1{
+        color: #b63030;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    h1{
+        color: #799e12;
+    }
+} */
+
+@media (max-width:400px) {
+    .photo{
+        display: none;
+    }
+    .button{
+        height: 20px;
+    }
+    .icon{
+        left:45%;
+    }
+
+    .button-t{
+        display: none;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .container{
+        width: 600px;
+    }
+    .photogroup{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+}
